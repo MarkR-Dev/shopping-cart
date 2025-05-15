@@ -1,7 +1,10 @@
 import { Outlet } from "react-router-dom";
+import useFetchProducts from "../hooks/useFetchProducts";
 import "../styles/reset.css";
 
 function App() {
+  const { products, error, loading } = useFetchProducts();
+
   return (
     <>
       <h2>Header component</h2>
