@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
 import * as storage from "../utils/localStorage";
 
-// todo:
-// add in abort controller?
-
 function useFetchProducts() {
   const [products, setProducts] = useState(null);
   const [error, setError] = useState(null);
@@ -12,9 +9,12 @@ function useFetchProducts() {
   const url = "https://fakestoreapi.com/products";
 
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
     const fetchProducts = async () => {
       try {
-        const response = await fetch(url, { mode: "cors" });
+        const response = await fetch(url, { mode: "cors", signal });
 
         if (response.status >= 400) {
           throw new Error("Server Error");
@@ -33,12 +33,14 @@ function useFetchProducts() {
     const cachedData = storage.getLocalStorage();
 
     if (cachedData !== null) {
-      console.log("using local data");
       setProducts(cachedData);
     } else {
-      console.log("fetching new dataa");
       fetchProducts();
     }
+
+    return () => {
+      controller.abort();
+    };
   }, []);
 
   return { products, error, loading };
