@@ -5,8 +5,7 @@ function ViewProduct() {
   const { id } = useParams();
   return (
     <>
-      <h1> View Product ID: {id}</h1>
-      <Link to="/products">Go Back to Products</Link>
+      <h2> View Product ID: {id}</h2>
     </>
   );
 }

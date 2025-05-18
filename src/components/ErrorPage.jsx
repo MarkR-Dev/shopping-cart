@@ -7,7 +7,7 @@ function ErrorPage() {
 
   return (
     <>
-      <h1>Error Page</h1>
+      <h2>Error Page</h2>
       <Link to="/">Go Back Home</Link>
     </>
   );

@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 function Products() {
   return (
     <>
-      <h1>Products</h1>
-      <Link to="/">Home</Link>
-      <Link to="/products">Products</Link>
-      <Link to="/cart">Cart</Link>
+      <h2>Products</h2>
 
       <div>
         <Link to="/products/1">Item 1</Link>
