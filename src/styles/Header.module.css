@@ -28,10 +28,16 @@ header {
 
 .navigation ul {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 30px;
 }
 
 .navigation ul a {
   color: white;
   text-decoration: none;
+  padding-bottom: 5px;
+}
+
+.navigation ul a.active {
+  border-bottom: 3px solid white;
 }

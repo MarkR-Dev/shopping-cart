@@ -1,8 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styles from "../styles/Header.module.css";
-
-//todo: how to style active navlinks
-//todo: get cart icon
+import { ShoppingCart } from "lucide-react";
 
 function Header() {
   return (
@@ -13,13 +11,25 @@ function Header() {
           <nav className={styles.navigation}>
             <ul>
               <li>
-                <NavLink to="/">Home</NavLink>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) => (isActive ? styles.active : "")}
+                >
+                  Home
+                </NavLink>
               </li>
               <li>
-                <NavLink to="products">Products</NavLink>
+                <NavLink
+                  to="products"
+                  className={({ isActive }) => (isActive ? styles.active : "")}
+                >
+                  Products
+                </NavLink>
               </li>
               <li>
-                <NavLink to="cart">Cart (needs icon)</NavLink>
+                <NavLink to="cart">
+                  <ShoppingCart size={40} strokeWidth={1.5} />
+                </NavLink>
               </li>
             </ul>
           </nav>
