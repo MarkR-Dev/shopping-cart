@@ -12,7 +12,8 @@ function ErrorPage() {
       <Header />
       <main className={styles.errorMain}>
         <div className={styles.container}>
-          <CircleX color="#707070" size={80} />
+          <CircleX color="#0c0c0c" size={80} />
+
           <h2 className={styles.headingLarge}>Oops!</h2>
           <h2>Something went wrong!</h2>
           <h2>

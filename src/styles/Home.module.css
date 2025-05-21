@@ -1,0 +1,49 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero {
+  background-image: url("../assets/store.jpg");
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
+}
+
+.heroText {
+  backdrop-filter: sepia(100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.heroText h1 {
+  font-size: 3rem;
+  text-align: center;
+  font-style: italic;
+  max-width: 500px;
+  line-height: 3.5rem;
+  color: white;
+}
+
+.heroText a {
+  text-decoration: none;
+  background-color: #0c0c0c;
+  border: 3px solid white;
+  color: white;
+  font-size: 1.7rem;
+  padding: 20px;
+  font-weight: 500;
+}
+
+.heroText a:hover {
+  background-color: white;
+  color: #0c0c0c;
+}
