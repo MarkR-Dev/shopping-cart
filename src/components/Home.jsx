@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ImageSlider from "./ImageSlider";
 import styles from "../styles/Home.module.css";
 
 function Home() {
