@@ -1,35 +1,34 @@
 import { useState } from "react";
+import styles from "../styles/ImageSlider.module.css";
 
 function ImageSlider({ imageUrls }) {
   const [imageIndex, setImageIndex] = useState(0);
+  const prevImg = imageIndex === 0 ? imageUrls.length - 1 : imageIndex - 1;
+  const nextImg = imageIndex === imageUrls.length - 1 ? 0 : imageIndex + 1;
 
   function handlePrevImage() {
-    let newIndex = null;
-    if (imageIndex === 0) {
-      newIndex = imageUrls.length - 1;
-    } else {
-      newIndex = imageIndex - 1;
-    }
-    setImageIndex(newIndex);
+    setImageIndex(prevImg);
   }
 
   function handleNextImage() {
-    let newIndex = null;
-    if (imageIndex === imageUrls.length - 1) {
-      newIndex = 0;
-    } else {
-      newIndex = imageIndex + 1;
-    }
-    setImageIndex(newIndex);
+    setImageIndex(nextImg);
   }
 
   return (
     <>
-      <div>
-        <img src={imageUrls[imageIndex]} alt="" />
-        <button onClick={handlePrevImage}>prev</button>
-        <button onClick={handleNextImage}>next</button>
+      <div className={styles.imagesContainer}>
+        <div className={styles.image}>
+          <img src={imageUrls[prevImg]} alt="" />
+        </div>
+        <div className={styles.image}>
+          <img src={imageUrls[imageIndex]} alt="" />
+        </div>
+        <div className={styles.image}>
+          <img src={imageUrls[nextImg]} alt="" />
+        </div>
       </div>
+      <button onClick={handlePrevImage}>prev</button>
+      <button onClick={handleNextImage}>next</button>
     </>
   );
 }
