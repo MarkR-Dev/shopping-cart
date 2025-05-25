@@ -10,9 +10,7 @@ function App() {
   return (
     <>
       <Header />
-      <Outlet />
-
-      {/* Pass state to children via context and access if in child via useOutletContext, check docs */}
+      <Outlet context={[products, error, loading]} />
     </>
   );
 }

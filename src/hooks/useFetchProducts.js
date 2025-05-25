@@ -34,6 +34,7 @@ function useFetchProducts() {
 
     if (cachedData !== null) {
       setProducts(cachedData);
+      setLoading(false);
     } else {
       fetchProducts();
     }

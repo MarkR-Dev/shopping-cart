@@ -2,8 +2,6 @@ import { useState } from "react";
 import styles from "../styles/ImageSlider.module.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// todo: import images, dots, responsiveness
-
 function ImageSlider({ imageUrls }) {
   const [imageIndex, setImageIndex] = useState(0);
   const prevImg = imageIndex === 0 ? imageUrls.length - 1 : imageIndex - 1;
