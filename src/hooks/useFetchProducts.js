@@ -21,6 +21,7 @@ function useFetchProducts() {
         }
 
         const data = await response.json();
+
         setProducts(data);
         storage.setLocalStorage(data);
       } catch (error) {

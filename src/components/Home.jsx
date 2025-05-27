@@ -3,7 +3,7 @@ import { useOutletContext } from "react-router-dom";
 import ImageSlider from "./ImageSlider";
 import styles from "../styles/Home.module.css";
 
-// todo: check import images works more, add loading spinner, dots, responsiveness
+// todo: limit images to set number, dots, add loading spinner, responsiveness
 
 function Home() {
   const [products, error, loading] = useOutletContext();
@@ -21,10 +21,12 @@ function Home() {
         </section>
 
         <section>
-          {!loading && !error && <ImageSlider imageUrls={imageUrls} />}
+          {loading && <h2>Loading...</h2>}
+          {products && <ImageSlider imageUrls={imageUrls} />}
         </section>
       </main>
     </>
   );
 }
+
 export default Home;

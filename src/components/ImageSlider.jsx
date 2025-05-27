@@ -1,9 +1,10 @@
 import { useState } from "react";
-import styles from "../styles/ImageSlider.module.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import styles from "../styles/ImageSlider.module.css";
 
 function ImageSlider({ imageUrls }) {
   const [imageIndex, setImageIndex] = useState(0);
+
   const prevImg = imageIndex === 0 ? imageUrls.length - 1 : imageIndex - 1;
   const nextImg = imageIndex === imageUrls.length - 1 ? 0 : imageIndex + 1;
 
