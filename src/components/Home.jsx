@@ -3,12 +3,15 @@ import { useOutletContext } from "react-router-dom";
 import ImageSlider from "./ImageSlider";
 import styles from "../styles/Home.module.css";
 
-// todo: limit images to set number, dots, add loading spinner, responsiveness
+// todo: add loading spinner, footer, responsiveness
 
 function Home() {
   const [products, error, loading] = useOutletContext();
 
-  const imageUrls = products?.map((item) => item.image);
+  const MAX_PRODUCT_IMAGES = 8;
+  const maxProducts = products?.slice(0, MAX_PRODUCT_IMAGES);
+
+  const imageUrls = maxProducts?.map((product) => product.image);
 
   return (
     <>

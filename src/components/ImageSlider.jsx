@@ -19,26 +19,42 @@ function ImageSlider({ imageUrls }) {
   return (
     <>
       <div className={styles.container}>
-        <div className={styles.imageSlider}>
-          <button onClick={handlePrevImage}>
-            <ChevronLeft size={44} strokeWidth={2} />
-          </button>
+        <div className={styles.imageSliderContainer}>
+          <div className={styles.imageSlider}>
+            <button onClick={handlePrevImage}>
+              <ChevronLeft size={44} strokeWidth={2} />
+            </button>
 
-          <div className={styles.imagesContainer}>
-            <div className={styles.image}>
-              <img src={imageUrls[prevImg]} alt="" />
+            <div className={styles.imagesContainer}>
+              <div className={styles.image}>
+                <img src={imageUrls[prevImg]} alt="" />
+              </div>
+              <div className={styles.image}>
+                <img src={imageUrls[imageIndex]} alt="" />
+              </div>
+              <div className={styles.image}>
+                <img src={imageUrls[nextImg]} alt="" />
+              </div>
             </div>
-            <div className={styles.image}>
-              <img src={imageUrls[imageIndex]} alt="" />
-            </div>
-            <div className={styles.image}>
-              <img src={imageUrls[nextImg]} alt="" />
-            </div>
+
+            <button onClick={handleNextImage}>
+              <ChevronRight size={44} strokeWidth={2} />
+            </button>
           </div>
 
-          <button onClick={handleNextImage}>
-            <ChevronRight size={44} strokeWidth={2} />
-          </button>
+          <div className={styles.dotsContainer}>
+            {imageUrls.map((url, index) => {
+              return (
+                <button
+                  key={index}
+                  onClick={() => setImageIndex(index)}
+                  className={`${styles.dot} ${
+                    index === imageIndex ? styles.active : ""
+                  }`}
+                ></button>
+              );
+            })}
+          </div>
         </div>
       </div>
     </>

@@ -41,7 +41,7 @@ function useFetchProducts() {
     }
 
     return () => {
-      controller.abort();
+      controller.abort("Aborted request due to component unmount");
     };
   }, []);
 
