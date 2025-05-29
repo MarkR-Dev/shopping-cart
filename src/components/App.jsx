@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import useFetchProducts from "../hooks/useFetchProducts";
 import Header from "./Header";
+import Footer from "./Footer";
 import "../styles/reset.css";
 import "../styles/App.css";
 
@@ -9,8 +10,11 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Outlet context={[products, error, loading]} />
+      <div className="app">
+        <Header />
+        <Outlet context={{ products, error, loading }} />
+        <Footer />
+      </div>
     </>
   );
 }

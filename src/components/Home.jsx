@@ -4,10 +4,8 @@ import ImageSlider from "./ImageSlider";
 import Spinner from "./Spinner";
 import styles from "../styles/Home.module.css";
 
-// todo: footer, responsiveness
-
 function Home() {
-  const [products, error, loading] = useOutletContext();
+  const { products, loading } = useOutletContext();
 
   const MAX_PRODUCT_IMAGES = 8;
   const maxProducts = products?.slice(0, MAX_PRODUCT_IMAGES);
@@ -24,7 +22,7 @@ function Home() {
           </div>
         </section>
 
-        <section>
+        <section className={styles.imageSliderSection}>
           {loading && <Spinner />}
           {products && <ImageSlider imageUrls={imageUrls} />}
         </section>

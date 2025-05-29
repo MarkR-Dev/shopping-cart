@@ -26,3 +26,9 @@
   font-weight: 500;
   padding: 16px;
 }
+
+.errorPage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
