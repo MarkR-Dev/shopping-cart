@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
 import ImageSlider from "./ImageSlider";
+import Spinner from "./Spinner";
 import styles from "../styles/Home.module.css";
 
-// todo: add loading spinner, footer, responsiveness
+// todo: footer, responsiveness
 
 function Home() {
   const [products, error, loading] = useOutletContext();
@@ -24,7 +25,7 @@ function Home() {
         </section>
 
         <section>
-          {loading && <h2>Loading...</h2>}
+          {loading && <Spinner />}
           {products && <ImageSlider imageUrls={imageUrls} />}
         </section>
       </main>
