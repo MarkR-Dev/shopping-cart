@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import PropTypes from "prop-types";
 import styles from "../styles/ImageSlider.module.css";
 
 function ImageSlider({ imageUrls }) {
@@ -60,5 +61,9 @@ function ImageSlider({ imageUrls }) {
     </>
   );
 }
+
+ImageSlider.propTypes = {
+  imageUrls: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default ImageSlider;
