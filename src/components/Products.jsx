@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Products() {
   return (
     <>
-      <h2>Products</h2>
+      <h2>Products page</h2>
 
       <div>
         <Link to="/products/1">Item 1</Link>

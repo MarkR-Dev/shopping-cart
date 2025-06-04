@@ -27,7 +27,7 @@ function Header() {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="cart">
+                <NavLink to="cart" data-testid="cart-icon">
                   <ShoppingCart size={40} strokeWidth={1.5} />
                 </NavLink>
               </li>
