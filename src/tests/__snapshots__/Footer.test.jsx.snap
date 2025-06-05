@@ -1,0 +1,74 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Footer Component > Matches snapshot 1`] = `
+<div>
+  <footer
+    class="_footer_4d8704"
+  >
+    <div
+      class="_container_4d8704"
+    >
+      <div
+        class="_footerLinks_4d8704"
+      >
+        <ul>
+          <li>
+            About
+          </li>
+          <li>
+            Store
+          </li>
+          <li>
+            Team
+          </li>
+          <li>
+            Blog
+          </li>
+        </ul>
+        <ul>
+          <li>
+            Support
+          </li>
+          <li>
+            FAQ
+          </li>
+          <li>
+            Contact
+          </li>
+          <li>
+            Jobs
+          </li>
+        </ul>
+        <ul>
+          <li>
+            Legal
+          </li>
+          <li>
+            Privacy
+          </li>
+          <li>
+            Terms Of Service
+          </li>
+          <li>
+            Refunds
+          </li>
+        </ul>
+        <ul>
+          <li>
+            Socials
+          </li>
+          <li>
+            Instagram
+          </li>
+          <li>
+            Twitter
+          </li>
+          <li>
+            GitHub
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</div>
+`;
