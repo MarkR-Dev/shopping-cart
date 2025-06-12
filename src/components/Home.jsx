@@ -10,7 +10,9 @@ function Home() {
   const MAX_PRODUCT_IMAGES = 8;
   const maxProducts = products?.slice(0, MAX_PRODUCT_IMAGES);
 
-  const imageUrls = maxProducts?.map((product) => product.image);
+  const imageData = maxProducts?.map((product) => {
+    return { imageUrl: product.image, alt: product.title };
+  });
 
   return (
     <>
@@ -24,7 +26,7 @@ function Home() {
 
         <section className={styles.imageSliderSection}>
           {loading && <Spinner />}
-          {products && <ImageSlider imageUrls={imageUrls} />}
+          {products && <ImageSlider imageData={imageData} />}
         </section>
       </main>
     </>
