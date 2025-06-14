@@ -35,3 +35,10 @@ header {
 .navigation ul a.active {
   border-bottom: 3px solid white;
 }
+
+@media (width < 500px) {
+  .container {
+    flex-direction: column;
+    gap: 30px;
+  }
+}

@@ -35,8 +35,8 @@
 .imagesContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 30px;
-  width: 800px;
   height: 250px;
 }
 
@@ -78,4 +78,43 @@
 
 .active {
   background-color: #0c0c0c;
+}
+
+@media (width < 1200px) {
+  .image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .imageSliderContainer {
+    gap: 0;
+  }
+}
+
+@media (width < 975px) {
+  .imagesContainer div:first-child {
+    display: none;
+  }
+}
+
+@media (width < 750px) {
+  .imagesContainer div:first-child,
+  .imagesContainer div:last-child {
+    display: none;
+  }
+}
+
+@media (width < 500px) {
+  .imageSlider button {
+    width: 50px;
+    height: 50px;
+  }
+  .image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .imagesContainer {
+    height: 200px;
+  }
 }

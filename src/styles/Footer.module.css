@@ -34,3 +34,19 @@
 .footerLinks ul li:not(:first-child) {
   cursor: pointer;
 }
+
+@media (width < 600px) {
+  .footerLinks ul {
+    min-width: 40%;
+  }
+
+  .footerLinks {
+    flex-wrap: wrap;
+  }
+}
+
+@media (width < 350px) {
+  .footerLinks {
+    flex-direction: column;
+  }
+}
