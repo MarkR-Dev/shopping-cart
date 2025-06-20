@@ -67,7 +67,7 @@ describe("Header Component", () => {
     await user.click(productsLink);
 
     const heading = screen.queryByRole("heading", {
-      name: /products page/i,
+      name: /products/i,
     });
 
     expect(heading).toBeInTheDocument();

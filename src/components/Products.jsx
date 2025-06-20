@@ -1,16 +1,42 @@
-import { Link } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
+import Spinner from "./Spinner";
+import ProductCard from "./ProductCard";
+import styles from "../styles/Products.module.css";
 
 function Products() {
+  // error return separate main with display message?
+  const { products, loading } = useOutletContext();
+
   return (
     <>
-      <h2>Products page</h2>
+      <main>
+        <div className={styles.container}>
+          <h2>Products</h2>
 
-      <div>
-        <Link to="/products/1">Item 1</Link>
-        <Link to="/products/2">Item 2</Link>
-        <Link to="/products/3">Item 3</Link>
-      </div>
+          {loading && <Spinner />}
+
+          {products && (
+            <div className={styles.productsContainer}>
+              {products.map((product, index) => {
+                return <ProductCard key={index} product={product} />;
+              })}
+            </div>
+          )}
+        </div>
+      </main>
     </>
   );
 }
+
 export default Products;
+
+/* 
+css - flex/grid for products container
+
+cart state added, circle back to nav and make cart icon work/tests - array of objects -> {id, quantity}
+
+tests:
+products page component renders
+product component - exists, input typing and increase/decrease works, add to cart, view more link
+mocks?
+*/

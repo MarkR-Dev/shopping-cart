@@ -33,7 +33,7 @@ describe("Home Component", () => {
     await user.click(productsLink);
 
     const productsHeading = screen.getByRole("heading", {
-      name: /products page/i,
+      name: /products/i,
     });
 
     expect(productsHeading).toBeInTheDocument();

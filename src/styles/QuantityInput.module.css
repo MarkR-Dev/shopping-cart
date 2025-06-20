@@ -1,0 +1,11 @@
+/* Hides increment/decrement arrows of number input in Chrome, Safari, Edge, Opera */
+.quantityInput::-webkit-outer-spin-button,
+.quantityInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hides increment/decrement arrows of number input in Firefox */
+/* .quantityInput[type="number"] {
+  -moz-appearance: textfield;
+} */
