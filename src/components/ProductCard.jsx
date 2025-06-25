@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import QuantityInput from "./QuantityInput";
 import styles from "../styles/ProductCard.module.css";
 import PropTypes from "prop-types";
@@ -21,6 +22,11 @@ function ProductCard({ product }) {
         </div>
 
         <QuantityInput quantity={quantity} setQuantity={setQuantity} />
+
+        <div className={styles.buttonsContainer}>
+          <button>Add To Cart</button>
+          <Link to={`/products/` + product.id}>View Product</Link>
+        </div>
       </div>
     </>
   );
@@ -44,5 +50,5 @@ ProductCard.propTypes = {
 
 export default ProductCard;
 
-//todo: add to cart, view more info (links to products/:id), styling, testing
-// mock the setQuantity, check params that it was called with, and that it was called
+// todo: link add to cart to button on product, styling, testing
+// mock the setQuantity?, check params that it was called with, and that it was called
