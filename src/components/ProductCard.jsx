@@ -5,7 +5,7 @@ import styles from "../styles/ProductCard.module.css";
 import PropTypes from "prop-types";
 import formatPrice from "../utils/formatPrice";
 
-function ProductCard({ product }) {
+function ProductCard({ product, addToCart }) {
   const [quantity, setQuantity] = useState(1);
   const price = formatPrice(product.price * quantity);
 
@@ -24,7 +24,11 @@ function ProductCard({ product }) {
         <QuantityInput quantity={quantity} setQuantity={setQuantity} />
 
         <div className={styles.buttonsContainer}>
-          <button>Add To Cart</button>
+          <button
+            onClick={() => addToCart({ id: product.id, quantity: quantity })}
+          >
+            Add To Cart
+          </button>
           <Link to={`/products/` + product.id}>View Product</Link>
         </div>
       </div>
@@ -50,5 +54,5 @@ ProductCard.propTypes = {
 
 export default ProductCard;
 
-// todo: link add to cart to button on product, styling, testing
+// todo: styling, testing
 // mock the setQuantity?, check params that it was called with, and that it was called

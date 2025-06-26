@@ -36,7 +36,7 @@ function App() {
     <>
       <div className="app">
         <Header />
-        <Outlet context={{ products, error, loading }} />
+        <Outlet context={{ products, error, loading, cart, addToCart }} />
         <Footer />
       </div>
     </>

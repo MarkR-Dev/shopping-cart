@@ -5,7 +5,7 @@ import styles from "../styles/Products.module.css";
 
 function Products() {
   // error return separate main with display message?
-  const { products, loading } = useOutletContext();
+  const { products, loading, addToCart } = useOutletContext();
 
   return (
     <>
@@ -18,7 +18,13 @@ function Products() {
           {products && (
             <div className={styles.productsContainer}>
               {products.map((product, index) => {
-                return <ProductCard key={index} product={product} />;
+                return (
+                  <ProductCard
+                    key={index}
+                    product={product}
+                    addToCart={addToCart}
+                  />
+                );
               })}
             </div>
           )}
@@ -33,10 +39,11 @@ export default Products;
 /* 
 css - flex/grid for products container
 
-cart state added, circle back to nav and make cart icon work/tests - array of objects -> {id, quantity}
+cart state added, circle back to nav and make cart icon work
 
 tests:
 products page component renders
 product component - exists, input typing and increase/decrease works, add to cart, view more link
 mocks?
+header cart icon tests
 */
