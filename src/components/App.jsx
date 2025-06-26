@@ -35,7 +35,7 @@ function App() {
   return (
     <>
       <div className="app">
-        <Header />
+        <Header cartLength={cart.length} />
         <Outlet context={{ products, error, loading, cart, addToCart }} />
         <Footer />
       </div>

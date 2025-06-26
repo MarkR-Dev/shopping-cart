@@ -36,6 +36,27 @@ header {
   border-bottom: 3px solid white;
 }
 
+header li:last-of-type {
+  position: relative;
+}
+
+.cartLength {
+  background-color: white;
+  color: #0c0c0c;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  position: absolute;
+  top: -5px;
+  right: -15px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+}
+
 @media (width < 500px) {
   .container {
     flex-direction: column;

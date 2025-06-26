@@ -37,10 +37,6 @@ function Products() {
 export default Products;
 
 /* 
-css - flex/grid for products container
-
-cart state added, circle back to nav and make cart icon work
-
 tests:
 products page component renders
 product component - exists, input typing and increase/decrease works, add to cart, view more link

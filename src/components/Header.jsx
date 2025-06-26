@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import styles from "../styles/Header.module.css";
 import { ShoppingCart } from "lucide-react";
 
-function Header() {
+function Header({ cartLength }) {
   return (
     <>
       <header>
@@ -29,6 +29,11 @@ function Header() {
               <li>
                 <NavLink to="cart" data-testid="cart-icon">
                   <ShoppingCart size={40} strokeWidth={1.5} />
+                  {cartLength > 0 && (
+                    <div className={styles.cartLength}>
+                      <span>{cartLength}</span>
+                    </div>
+                  )}
                 </NavLink>
               </li>
             </ul>
