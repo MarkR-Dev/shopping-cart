@@ -8,4 +8,18 @@
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.heading {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #0c0c0c;
+}
+
+@media (width < 500px) {
+  .heading {
+    text-align: center;
+  }
 }

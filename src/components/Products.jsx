@@ -4,14 +4,13 @@ import ProductCard from "./ProductCard";
 import styles from "../styles/Products.module.css";
 
 function Products() {
-  // error return separate main with display message?
   const { products, loading, addToCart } = useOutletContext();
 
   return (
     <>
       <main>
         <div className={styles.container}>
-          <h2>Products</h2>
+          <h2 className={styles.heading}>Products</h2>
 
           {loading && <Spinner />}
 
@@ -40,6 +39,6 @@ export default Products;
 tests:
 products page component renders
 product component - exists, input typing and increase/decrease works, add to cart, view more link
-mocks?
+mocks? set quantity?
 header cart icon tests
 */

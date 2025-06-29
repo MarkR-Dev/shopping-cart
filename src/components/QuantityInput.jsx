@@ -35,8 +35,10 @@ function QuantityInput({ quantity, setQuantity }) {
 
   return (
     <>
-      <div>
-        <button onClick={handleDecrement}>less</button>
+      <div className={styles.inputContainer}>
+        <button onClick={handleDecrement} className={styles.decrease}>
+          &lt;
+        </button>
         <input
           type="number"
           name="quantity"
@@ -44,7 +46,9 @@ function QuantityInput({ quantity, setQuantity }) {
           value={quantity}
           onChange={handleChange}
         />
-        <button onClick={handleIncrement}>more</button>
+        <button onClick={handleIncrement} className={styles.increase}>
+          &gt;
+        </button>
       </div>
     </>
   );

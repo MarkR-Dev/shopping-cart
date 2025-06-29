@@ -17,8 +17,8 @@ function ProductCard({ product, addToCart }) {
         </div>
 
         <div className={styles.infoContainer}>
-          <h2>{product.title}</h2>
-          <h3>{price}</h3>
+          <h2 className={styles.title}>{product.title}</h2>
+          <h3 className={styles.price}>{price}</h3>
         </div>
 
         <QuantityInput quantity={quantity} setQuantity={setQuantity} />
@@ -29,7 +29,9 @@ function ProductCard({ product, addToCart }) {
           >
             Add To Cart
           </button>
-          <Link to={`/products/` + product.id}>View Product</Link>
+          <Link to={`/products/` + product.id} className={styles.viewProduct}>
+            View Product
+          </Link>
         </div>
       </div>
     </>
@@ -53,6 +55,3 @@ ProductCard.propTypes = {
 };
 
 export default ProductCard;
-
-// todo: styling, testing
-// mock the setQuantity?, check params that it was called with, and that it was called

@@ -6,6 +6,29 @@
 }
 
 /* Hides increment/decrement arrows of number input in Firefox */
-/* .quantityInput[type="number"] {
+.quantityInput[type="number"] {
   -moz-appearance: textfield;
-} */
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+}
+
+.quantityInput {
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  border: 2px solid #0c0c0c;
+}
+
+.decrease,
+.increase {
+  width: 50px;
+  height: 30px;
+  border: none;
+  background-color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
