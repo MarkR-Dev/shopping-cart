@@ -105,5 +105,58 @@ describe("Header Component", () => {
     expect(heading).toBeInTheDocument();
   });
 
-  it.todo("Cart icon updates when cart quantity changes");
+  it("Cart length number icon doesn't exist on page when cart is empty", () => {
+    render(
+      <MemoryRouter>
+        <Header />
+      </MemoryRouter>
+    );
+
+    const cartItemNumber = screen.queryByLabelText("cart-length");
+
+    expect(cartItemNumber).toBeNull();
+  });
+
+  it("Cart icon updates when cart quantity changes", async () => {
+    const user = userEvent.setup();
+
+    const memoryRouter = createMemoryRouter(routes, {
+      initialEntries: ["/products"],
+    });
+
+    render(<RouterProvider router={memoryRouter} />);
+
+    const addTocartBtn = await screen.findAllByRole("button", {
+      name: /add to cart/i,
+    });
+
+    await user.click(addTocartBtn[0]);
+
+    const cartItemNumber = screen.queryByLabelText("cart-length");
+
+    expect(cartItemNumber).not.toBeNull();
+    expect(cartItemNumber.textContent).toBe("1");
+  });
+
+  it("Cart icon updates when multiple different items are added to cart", async () => {
+    const user = userEvent.setup();
+
+    const memoryRouter = createMemoryRouter(routes, {
+      initialEntries: ["/products"],
+    });
+
+    render(<RouterProvider router={memoryRouter} />);
+
+    const addTocartBtn = await screen.findAllByRole("button", {
+      name: /add to cart/i,
+    });
+
+    await user.click(addTocartBtn[0]);
+    await user.click(addTocartBtn[1]);
+
+    const cartItemNumber = screen.queryByLabelText("cart-length");
+
+    expect(cartItemNumber).not.toBeNull();
+    expect(cartItemNumber.textContent).toBe("2");
+  });
 });

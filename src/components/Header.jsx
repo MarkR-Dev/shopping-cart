@@ -31,7 +31,7 @@ function Header({ cartLength }) {
                   <ShoppingCart size={40} strokeWidth={1.5} />
                   {cartLength > 0 && (
                     <div className={styles.cartLength}>
-                      <span>{cartLength}</span>
+                      <span aria-label="cart-length">{cartLength}</span>
                     </div>
                   )}
                 </NavLink>
