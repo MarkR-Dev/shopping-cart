@@ -11,7 +11,7 @@ function ProductCard({ product, addToCart }) {
 
   return (
     <>
-      <div className={styles.cardContainer}>
+      <div className={styles.cardContainer} data-testid="product-card">
         <div className={styles.imageContainer}>
           <img src={product.image} alt={product.title} />
         </div>

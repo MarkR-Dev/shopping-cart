@@ -37,8 +37,6 @@ export default Products;
 
 /* 
 tests:
-products page component renders
 product component - exists, input typing and increase/decrease works, add to cart, view more link
 mocks? set quantity?
-header cart icon tests
 */
