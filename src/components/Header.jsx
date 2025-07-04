@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styles from "../styles/Header.module.css";
 import { ShoppingCart } from "lucide-react";
+import PropTypes from "prop-types";
 
 function Header({ cartLength }) {
   return (
@@ -43,5 +44,10 @@ function Header({ cartLength }) {
     </>
   );
 }
+
+// Proptypes were removed from React v19 to be silently ignored - in future use TypeScript or another solution (change to React v18/find another package)
+Header.propTypes = {
+  cartLength: PropTypes.number,
+};
 
 export default Header;
