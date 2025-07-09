@@ -60,6 +60,29 @@ describe("Product Card Component", () => {
     expect(addToCart).toHaveBeenCalled();
   });
 
-  // todo once next page is setup
-  it.todo("Clicking view product navigates to /products/:id");
+  it("Clicking view product navigates to /products/:id", async () => {
+    const user = userEvent.setup();
+
+    const memoryRouter = createMemoryRouter(routes, {
+      initialEntries: ["/products"],
+    });
+
+    render(<RouterProvider router={memoryRouter} />);
+
+    const viewProductBtn = await screen.findAllByRole("link", {
+      name: /view product/i,
+    });
+
+    await user.click(viewProductBtn[0]);
+
+    const heading = screen.getByRole("heading", {
+      name: /Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops/i,
+    });
+    const img = screen.getByAltText(
+      /Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops/i
+    );
+
+    expect(heading).toBeInTheDocument();
+    expect(img).toBeInTheDocument();
+  });
 });

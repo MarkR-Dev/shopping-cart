@@ -2,7 +2,7 @@
 
 Areas that could be improved:
 
-- UI/CSS - most notably the use of svgs/icons and tab indicators for header
+- UI/CSS - most notably the use of svgs/icons and tab indicators for header, among several other small issues
 - Accessible semantic html to aid assitive technologies/allow for better querying via RTL
 - Testing - over tested? tested things incorrectly? better testing query/userEvents, create tests before pages/components rather than after or during
 - More Testing - a better understanding about what I should be testing, and how to create code/components that makes it easier to create tests
