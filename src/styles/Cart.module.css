@@ -1,0 +1,36 @@
+.container {
+  max-width: 1200px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+main {
+  margin-bottom: auto;
+}
+
+.heading {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #0c0c0c;
+}
+
+.emptyCart {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message {
+  font-size: 1.4rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.viewProducts {
+  background-color: #0c0c0c;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 16px;
+}

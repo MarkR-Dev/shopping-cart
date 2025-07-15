@@ -99,7 +99,7 @@ describe("Header Component", () => {
     await user.click(cartLink);
 
     const heading = screen.queryByRole("heading", {
-      name: /cart page/i,
+      name: /your cart/i,
     });
 
     expect(heading).toBeInTheDocument();

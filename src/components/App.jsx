@@ -5,7 +5,6 @@ import Header from "./Header";
 import Footer from "./Footer";
 import "../styles/reset.css";
 import "../styles/App.css";
-import { ScrollRestoration } from "react-router-dom";
 
 function App() {
   const { products, error, loading } = useFetchProducts();
@@ -33,12 +32,28 @@ function App() {
     }
   }
 
+  // productToUpdate object {id, quantity}
+  function updateCart(productToUpdate) {
+    const newCart = cart.map((product) => {
+      if (product.id === productToUpdate.id) {
+        return {
+          id: product.id,
+          quantity: productToUpdate.quantity,
+        };
+      }
+      return product;
+    });
+
+    setCart(newCart);
+  }
+
   return (
     <>
       <div className="app">
-        {/* <ScrollRestoration /> */}
         <Header cartLength={cart.length} />
-        <Outlet context={{ products, error, loading, cart, addToCart }} />
+        <Outlet
+          context={{ products, error, loading, cart, addToCart, updateCart }}
+        />
         <Footer />
       </div>
     </>
