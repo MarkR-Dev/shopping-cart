@@ -1,14 +1,13 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import CartItemQuantityInput from "./CartItemQuantityInput";
 import styles from "../styles/CartItem.module.css";
 import formatPrice from "../utils/formatPrice";
 import PropTypes from "prop-types";
 
-function CartItem({ product, productQuantity, updateCart }) {
+function CartItem({ product, productQuantity, updateCart, removeFromCart }) {
   const [quantity, setQuantity] = useState(productQuantity);
   const price = formatPrice(product.price * productQuantity);
-
-  /* todo: remove item btn/view product btn */
 
   return (
     <div className={styles.cartItem}>
@@ -20,17 +19,26 @@ function CartItem({ product, productQuantity, updateCart }) {
         />
       </div>
 
-      <div className={styles.infoContainer}>
-        <h3>{product.title}</h3>
-        <h4>{price}</h4>
-      </div>
+      <div className={styles.productInfoContainer}>
+        <div className={styles.textInfoContainer}>
+          <h3 className={styles.title}>
+            {product.title} x{quantity}
+          </h3>
+          <h4 className={styles.price}>{price}</h4>
+        </div>
 
-      <CartItemQuantityInput
-        quantity={quantity}
-        setQuantity={setQuantity}
-        updateCart={updateCart}
-        productId={product.id}
-      />
+        <CartItemQuantityInput
+          quantity={quantity}
+          setQuantity={setQuantity}
+          updateCart={updateCart}
+          productId={product.id}
+        />
+
+        <div className={styles.buttonsContainer}>
+          <button onClick={() => removeFromCart(product.id)}>Remove</button>
+          <Link to={"/products/" + product.id}>View Product</Link>
+        </div>
+      </div>
     </div>
   );
 }

@@ -12,8 +12,8 @@
 
 .inputContainer {
   display: flex;
-  align-items: center;
-  margin-top: auto;
+  /* align-items: center; */
+  /* margin-top: auto; */
 }
 
 .quantityInput {

@@ -47,12 +47,31 @@ function App() {
     setCart(newCart);
   }
 
+  // id of product to remove from cart
+  function removeFromCart(id) {
+    const newCart = cart.filter((item) => item.id !== id);
+    setCart(newCart);
+  }
+
+  function clearCart() {
+    setCart([]);
+  }
+
   return (
     <>
       <div className="app">
         <Header cartLength={cart.length} />
         <Outlet
-          context={{ products, error, loading, cart, addToCart, updateCart }}
+          context={{
+            products,
+            error,
+            loading,
+            cart,
+            addToCart,
+            updateCart,
+            removeFromCart,
+            clearCart,
+          }}
         />
         <Footer />
       </div>
