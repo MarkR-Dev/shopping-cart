@@ -4,8 +4,6 @@ import styles from "../styles/Cart.module.css";
 import CartItem from "./CartItem";
 import formatPrice from "../utils/formatPrice";
 
-// todo: testing
-
 function Cart() {
   const { products, loading, cart, updateCart, removeFromCart, clearCart } =
     useOutletContext();
@@ -62,7 +60,9 @@ function Cart() {
 
               <div className={styles.totalContainer}>
                 <h2 className={styles.totalText}>Total</h2>
-                <h2 className={styles.totalPrice}>{calcTotal()}</h2>
+                <h2 className={styles.totalPrice} data-testid="total-price">
+                  {calcTotal()}
+                </h2>
               </div>
 
               <div className={styles.buttonsContainer}>
