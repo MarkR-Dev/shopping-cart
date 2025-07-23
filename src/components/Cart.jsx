@@ -8,7 +8,7 @@ function Cart() {
   const { products, loading, cart, updateCart, removeFromCart, clearCart } =
     useOutletContext();
 
-  // This is probably not needed if I were to structure my data properly rather than combining two data objects together used throughout the project
+  // This is probably not needed if I were to structure my data properly rather than combining two data objects together
   function calcTotal() {
     const items = cart.map((item) => {
       const cartItem = products[item.id - 1];

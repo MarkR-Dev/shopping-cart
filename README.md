@@ -2,7 +2,7 @@
 
 Areas that could be improved:
 
-- Structure data with consideration for all aspects of the project so you don't have to quick fix issues down the line
+- Structure data with consideration for all aspects of the project so you don't have to fix issues down the line
 - UI/CSS - most notably the use of svgs/icons and tab indicators for header, among several other small issues
 - UI/CSS - better repsonsive breakpoints that are in sync with all elements
 - Accessible semantic html to aid assitive technologies/allow for better querying via RTL
@@ -11,7 +11,7 @@ Areas that could be improved:
 - Even more testing - putting setup code into its own function/beforeEach to avoid repetition
 - Creating more re-usable components that are easier to test in isolation
 - Fixing the PropType issue (reverting to old react version or finding another package)
-- Using the error variable in components to render a different version of a component when something is wrong in the useFetchProducts
+- Using the error value from fetch hook in components to render a different version of a component when something is wrong in the useFetchProducts
 - Maybe using context api to pass props around and manage state would have been better, could have made it easier to test and avoid minor prop drilling
 - Check some examples of better react design practices and how to structure and test a react project
 - Better naming conventions of variables/data

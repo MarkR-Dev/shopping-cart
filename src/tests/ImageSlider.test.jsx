@@ -19,7 +19,6 @@ const testImages = [
   },
 ];
 
-// These tests should ideally be split into smaller tests
 describe("Image Slider", () => {
   it("Renders image slider", () => {
     render(<ImageSlider imageData={testImages} />);
