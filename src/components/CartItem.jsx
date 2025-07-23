@@ -24,7 +24,9 @@ function CartItem({ product, productQuantity, updateCart, removeFromCart }) {
           <h3 className={styles.title}>
             {product.title} x{quantity}
           </h3>
-          <h4 className={styles.price}>{price}</h4>
+          <h4 className={styles.price} data-testid="cartItem-price">
+            {price}
+          </h4>
         </div>
 
         <CartItemQuantityInput
