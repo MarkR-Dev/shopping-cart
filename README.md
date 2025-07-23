@@ -14,7 +14,8 @@ Areas that could be improved:
 - Using the error variable in components to render a different version of a component when something is wrong in the useFetchProducts
 - Maybe using context api to pass props around and manage state would have been better, could have made it easier to test and avoid minor prop drilling
 - Check some examples of better react design practices and how to structure and test a react project
+- Better naming conventions of variables/data
 - Quantity inputs could have probably been one component instead of two
-- Research into scroll restoration
+- Research into scroll restoration to send page location to the top on new route
 
 Homepage photo by <a href="https://unsplash.com/@tem_rysh?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Tem Rysh</a> on <a href="https://unsplash.com/photos/black-trike-parked-near-soter-F6-U5fGAOik?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
